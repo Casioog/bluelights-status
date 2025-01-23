@@ -1,4 +1,4 @@
-/* Základní reset */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -10,17 +10,25 @@ body {
     color: #c9d1d9;
     font-family: 'Arial', sans-serif;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+header .logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
 }
 
 header h1 {
     color: #58a6ff;
     font-size: 2.5rem;
-    margin-bottom: 10px;
 }
 
 header .status {
@@ -30,19 +38,21 @@ header .status {
 }
 
 .category {
-    margin-top: 30px;
+    width: 80%;
+    margin-top: 20px;
 }
 
 .category h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: #58a6ff;
+    text-transform: uppercase;
 }
 
 .item {
     background-color: #161b22;
     border-radius: 10px;
-    padding: 15px;
+    padding: 20px;
     margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
@@ -53,31 +63,36 @@ header .status {
 
 .item p {
     margin: 0;
+    font-size: 1.1rem;
+    color: #c9d1d9;
 }
 
-.status-green {
-    color: #39d353;
-    font-weight: bold;
-}
-
-.chart {
-    width: 100px;
-    height: 10px;
-    background: linear-gradient(to right, #39d353 100%, #161b22 0%);
-    border-radius: 5px;
-    overflow: hidden;
+.bars {
     display: flex;
-    animation: loadChart 2s ease-in-out;
+    gap: 2px;
 }
 
-.chart::before {
+.bars::before {
     content: '';
-    display: block;
-    height: 100%;
-    background-color: #39d353;
-    animation: loadingBar 2s infinite;
+    display: inline-block;
+    height: 8px;
+    width: 120px;
+    background: repeating-linear-gradient(90deg, #39d353, #39d353 5px, #161b22 5px, #161b22 10px);
+    animation: barAnim 2s linear infinite;
 }
 
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #8b949e;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Animace */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -89,11 +104,11 @@ header .status {
     }
 }
 
-@keyframes loadingBar {
+@keyframes barAnim {
     0% {
-        width: 0;
+        background-position: 0 0;
     }
     100% {
-        width: 100%;
+        background-position: -120px 0;
     }
 }
