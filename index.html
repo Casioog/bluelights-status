@@ -3,46 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlueLights Roleplay</title>
+    <title>BlueLights Roleplay - Status</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Ikony FontAwesome -->
-    <link rel="icon" href="logo.png" type="image/png"> <!-- Logo jako favicon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="BlueLights Roleplay Logo" class="logo">
-        <h1>BlueLights Roleplay</h1>
-        <h2 class="status">
-            <i class="fa-solid fa-circle-check"></i> Všechny systémy běží
-        </h2>
-    </header>
-    <main>
-        <section class="category">
-            <h3>Web</h3>
-            <div class="item">
-                <p>Web - bluelightsroleplay.eu</p>
-                <div class="bars"></div>
+    <div class="container">
+        <header>
+            <h1>BlueLights Roleplay</h1>
+        </header>
+
+        <div class="status-message">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Všechny systémy běží</span>
+        </div>
+
+        <section class="services">
+            <h2>Web</h2>
+            <div class="service-item">
+                <div class="service-info">
+                    <span class="percentage">100%</span>
+                    <span class="service-name">Web - bluelightsroleplay.eu</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
             </div>
-            <div class="item">
-                <p>Administrace - admin.bluelightsroleplay.eu</p>
-                <div class="bars"></div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <span class="percentage">100%</span>
+                    <span class="service-name">Administrace - admin.bluelightsroleplay.eu</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+
+            <h2>Discord</h2>
+            <div class="service-item">
+                <div class="service-info">
+                    <span class="percentage">100%</span>
+                    <span class="service-name">Ticket bot</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <span class="percentage">100%</span>
+                    <span class="service-name">Bluelights bot</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
             </div>
         </section>
-        <section class="category">
-            <h3>Discord</h3>
-            <div class="item">
-                <p>Ticket bot</p>
-                <div class="bars"></div>
-            </div>
-            <div class="item">
-                <p>Bluelights bot</p>
-                <div class="bars"></div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>Copyright © 2025 bluelightsroleplay.eu | Všechna práva vyhrazena.</p>
-        <p>Poslední aktualizace: 2025-01-23 | Obnovení za: 03:55</p>
-    </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
