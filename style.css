@@ -1,0 +1,210 @@
+:root {
+    --green: #00ff66;
+    --dark-bg: #0a0b0f;
+    --card-bg: rgba(26, 29, 38, 0.95);
+    --text-primary: #ffffff;
+    --text-secondary: #ffffff90;
+    --gradient-start: #1a1d26;
+    --gradient-end: #0f1117;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.background-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top, var(--gradient-start), var(--gradient-end));
+    z-index: -1;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.logo-container {
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 102, 0.2));
+}
+
+.status-card {
+    background: var(--card-bg);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.status-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 2rem;
+}
+
+.status-header i {
+    color: var(--green);
+    font-size: 1.75rem;
+    animation: pulse 2s infinite;
+}
+
+.status-header span {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.service-category {
+    margin-bottom: 2.5rem;
+}
+
+.service-category h2 {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.service-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 1rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.service-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.service-name {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.percentage {
+    background-color: rgba(0, 255, 102, 0.15);
+    color: var(--green);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.progress-bar {
+    height: 4px;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.segments {
+    height: 100%;
+    width: 100%;
+    background-image: repeating-linear-gradient(
+        90deg,
+        var(--green) 0px,
+        var(--green) 8px,
+        transparent 8px,
+        transparent 12px
+    );
+    animation: progressAnimation 1.5s ease-out forwards;
+    transform-origin: left;
+}
+
+.update-info {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 3rem;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+@keyframes progressAnimation {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .status-card {
+        padding: 1.5rem;
+    }
+    
+    .service-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .update-info {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
