@@ -1,28 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Status Page</title>
+    <title>BlueLights Roleplay</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Ikony FontAwesome -->
 </head>
 <body>
     <header>
-        <img src="https://media.discordapp.net/attachments/1297611656460894240/1330626754318176298/752921173.png?ex=6793477c&is=6791f5fc&hm=20033adc27be5fa4565014dd48f88275067e74db88006ff0e99b8fc4f90074a6&=&format=webp&quality=lossless" alt="Logo" class="logo">
-        <h1>Web Status Monitor</h1>
+        <h1>BlueLights Roleplay</h1>
+        <h2 class="status">
+            <i class="fa-solid fa-circle-check"></i> Všechny systémy běží
+        </h2>
     </header>
     <main>
-        <section class="status">
-            <h2>Status Webů</h2>
-            <div class="status-item" id="bluelights">
-                <h3>Bluelights Roleplay</h3>
-                <p>Status: <span class="status-value">Načítání...</span></p>
-                <p>Online od: <span class="uptime">Načítání...</span></p>
+        <section class="category">
+            <h3>Web</h3>
+            <div class="item">
+                <p>Web - bluelightsroleplay.eu</p>
+                <p class="status-green">100%</p>
+                <div class="chart"></div>
             </div>
-            <div class="status-item" id="admin-bluelights">
-                <h3>Admin Bluelights</h3>
-                <p>Status: <span class="status-value">Načítání...</span></p>
-                <p>Online od: <span class="uptime">Načítání...</span></p>
+            <div class="item">
+                <p>Administrace - admin.bluelightsroleplay.eu</p>
+                <p class="status-green">100%</p>
+                <div class="chart"></div>
+            </div>
+        </section>
+        <section class="category">
+            <h3>Discord</h3>
+            <div class="item">
+                <p>Ticket bot</p>
+                <p class="status-green">100%</p>
+                <div class="chart"></div>
+            </div>
+            <div class="item">
+                <p>Bluelights bot</p>
+                <p class="status-green">100%</p>
+                <div class="chart"></div>
             </div>
         </section>
     </main>
