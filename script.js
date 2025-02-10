@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize progress bars with segments
+    // Initialize progress bars
     const progressBars = document.querySelectorAll('.progress-bar');
     progressBars.forEach((bar, index) => {
         setTimeout(() => {
@@ -20,22 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             if (minutes < 0) {
                 minutes = 3;
-                seconds = 55;
+                seconds = 51;
             }
             timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
         }, 1000);
     }
 
     updateTimer();
-
-    // Add hover effect for service items
-    const serviceItems = document.querySelectorAll('.service-item');
-    serviceItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            item.style.transform = 'translateY(-2px)';
-        });
-        item.addEventListener('mouseleave', () => {
-            item.style.transform = 'translateY(0)';
-        });
-    });
 });
