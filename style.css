@@ -1,5 +1,6 @@
 :root {
     --green: #00ff66;
+    --red: #ff3333;
     --dark-bg: #0a0b0f;
     --card-bg: rgba(26, 29, 38, 0.95);
     --text-primary: #ffffff;
@@ -88,6 +89,40 @@ header {
     font-weight: 500;
 }
 
+.alert-message {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.alert-message span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.alert-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #3498db, #e74c3c);
+    animation: slide 2s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
 .service-category {
     margin-bottom: 2.5rem;
 }
@@ -155,6 +190,25 @@ header {
     );
     animation: progressAnimation 1.5s ease-out forwards;
     transform-origin: left;
+}
+
+.partial-outage {
+    background-image: repeating-linear-gradient(
+        90deg,
+        var(--green) 0px,
+        var(--green) 8px,
+        transparent 8px,
+        transparent 12px
+    ),
+    repeating-linear-gradient(
+        90deg,
+        var(--red) 0px,
+        var(--red) 8px,
+        transparent 8px,
+        transparent 12px
+    );
+    background-size: 100% 100%, 20% 100%;
+    background-repeat: no-repeat;
 }
 
 .update-info {
